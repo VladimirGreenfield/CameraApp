@@ -13,7 +13,14 @@ function App() {
       video.srcObject = stream;
       video.play();
     })
+    .catch(err => {
+      console.error(err);
+    })
   }
+
+  useEffect(() => {
+    getVideo();
+  }, [videoRef])
   
   return (
     <div className="App">
